@@ -1,4 +1,4 @@
-class Solution {
+Java: class Solution {
     public boolean isAnagram(String s, String t) {
        final int[] hash = new int[26];
 
@@ -19,5 +19,23 @@ class Solution {
          return true;
 
 
+    }
+}
+
+C#: public class Solution {
+    public bool IsAnagram(string s, string t) {
+        if ( s.Length != t.Length ) {
+            return false;
+        }
+
+        char [] sSort = s.ToCharArray();
+        char [] tSort = t.ToCharArray();
+
+        Array.Sort(sSort);
+        Array.Sort(tSort);
+
+        return sSort.SequenceEqual(tSort);
+
+        
     }
 }
