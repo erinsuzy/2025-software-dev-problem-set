@@ -1,4 +1,4 @@
-class Solution {
+Java: class Solution {
     public boolean containsDuplicate(int[] nums) {
           Set<Integer> set = new HashSet<>();
 
@@ -8,4 +8,17 @@ class Solution {
           }
           return false;
     }
+}
+
+C#:public class Solution {
+    public bool ContainsDuplicate(int[] nums) {
+        Dictionary<int, int> set = new Dictionary<int, int>();
+
+        foreach( num in nums ) {
+         if(set.ContainsKey(num)) {
+         return true;
+         }
+         set[num] = num;
+    }
+    return false;
 }
