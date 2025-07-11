@@ -1,0 +1,18 @@
+C#: public class Solution {
+    public IList<IList<string>> GroupAnagrams(string[] strs) {
+        Dictionary<string, IList<string>> res = new Dictionary<string, IList<string>>();
+
+        foreach( string s in strs ) {
+            char[] charArray = s.ToCharArray();
+            Array.Sort(charArray);
+
+            string sortedS = new string (charArray);
+            if(! res.ContainsKey(sortedS)){
+                res[sortedS] = new List<string>();
+            }
+            res[sortedS].Add(s);
+
+        }
+            return res.Values.ToList<IList<string>>();
+        }
+    }
